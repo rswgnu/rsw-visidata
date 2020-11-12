@@ -6,15 +6,17 @@ is for extensions to the existing VisiData documentaton.
 
 # Cheatsheet
 
-[This cheatsheet](rsw-cheatsheet.org) takes the [original
+[This rsw-cheatsheet](https://github.com/rswgnu/rsw-cheatsheet.org)
+takes the [original
 cheatsheet](https://jsvine.github.io/visidata-cheat-sheet/en/),
-reorganizes it and extends it with additional more advanced data
-manipulation sections.  This might make a great replacement for the
-man page help bound to Control-h in VisiData.
+reorganizes it, extends it with additional advanced data manipulation
+sections and converts it into a text-only file format (Emacs .org
+outline and table format).  This might make a great replacement for
+the man page help bound to Control-h in VisiData.
 
 # Emacs Keybindings
 
-[This .visidatarc file]((.visidatarc) is a still in-progress emulation
+[This .visidatarc file](.visidatarc) is a still in-progress emulation
 of basic Emacs movement commands within VisiData so that Emacs users
 can navigate VisiData faster and focus on the data wrangling aspects
 quicker.
