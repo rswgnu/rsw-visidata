@@ -6,7 +6,7 @@ is for extensions to the existing VisiData documentaton.
 
 # Cheatsheet
 
-[This rsw-cheatsheet](https://github.com/rswgnu/rsw-cheatsheet.org)
+[This rsw-cheatsheet](https://github.com/rswgnu/rsw-visidata/rsw-cheatsheet.org)
 takes the [original
 cheatsheet](https://jsvine.github.io/visidata-cheat-sheet/en/),
 reorganizes it, extends it with additional advanced data manipulation
