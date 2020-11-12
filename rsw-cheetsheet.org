@@ -1,0 +1,303 @@
+* VisiData V2 Cheat Sheet
+
+  |--------------+------------------------------------------------------|
+  | Adaptation   | Expanded and adapted for text usage by <rsw@gnu.org> |
+  | Version      | VisiData 2.0.1                                       |
+  | Updated      | 2020-11-11                                           |
+  | License      | Creative Commons Zero v1.0 Universal (cc0-1.0)       |
+  |              |                                                      |
+  | Original URL | From which this was adapted:                         |
+  |              | https://jsvine.github.io/visidata-cheat-sheet/en/    |
+  | Tutorial     | https://jsvine.github.io/intro-to-visidata           |
+  | More info    | visidata.org                                         |
+  |--------------+------------------------------------------------------|
+
+* Getting Help
+
+  |---------------------+-----------------------------------------------------------|
+  | Keys                | Description                                               |
+  |---------------------+-----------------------------------------------------------|
+  | Ctrl-h              | Display the "Quick Reference Guide"                       |
+  | z + Ctrl-h          | Display a list of commands available on the current sheet |
+  | Space + help-search | Display a list of commands matching a search term         |
+  | Space               | Execute a command by name when there is no key binding    |
+  |---------------------+-----------------------------------------------------------|
+
+* Getting Out of Trouble
+
+  |--------------+---------------------------------|
+  | Keys         | Description                     |
+  |--------------+---------------------------------|
+  | Ctrl-c       | Abort the current command       |
+  | q            | Quit the current VisiData sheet |
+  | gq or Ctrl-q | Quit VisiData                   |
+  |--------------+---------------------------------|
+
+* Input / Output
+
+  |-----------------------+--------------------------------------------------------|
+  | Keys                  | Files and Clipboard                                    |
+  |-----------------------+--------------------------------------------------------|
+  | o + filename          | Open a file                                            |
+  | Ctrl-s + filename     | Save current sheet to filename                         |
+  | g + Ctrl-s + filename | Save all sheets to filename                            |
+  | gY                    | Copy sheet (or selected rows) to clipboard             |
+  | gzY                   | Copy column (or selected rows for column) to clipboard |
+  | Ctrl-r                | Reload sheet                                           |
+  |-----------------------+--------------------------------------------------------|
+  | Keys                  | Directory Sheets                                       |
+  |-----------------------+--------------------------------------------------------|
+  | Ctrl-j                | Open filename on current line in a new sheet           |
+  | Ctrl-o                | Open filename on current line in external $EDITOR      |
+  | g + Ctrl-j            | Opwn all selected file lines in new sheets             |
+  | g + Ctrl-o            | Opwn all selected file lines in external $EDITOR       |
+  |-----------------------+--------------------------------------------------------|
+
+* Moving the Cursor
+
+  |----------------------------+-------------------------------------------------------------|
+  | Keys                       | Description                                                 |
+  |----------------------------+-------------------------------------------------------------|
+  | ← ↑ → ↓ PgUp PgDn Home End | Move as expected                                            |
+  | h j k l                    | Move cursor one cell left/down/up/right (like in vim)       |
+  | gh gj gk gl                | Move all the way to the left/bottom/top/right of sheet      |
+  | < >                        | Move up/down the current column to the next different value |
+  | { }                        | Move up/down the current column to the next selected row    |
+  | Ctrl-F                     | One page down (forward)                                     |
+  | Ctrl-B                     | One page up (backward)                                      |
+  |----------------------------+-------------------------------------------------------------|
+
+* Moving Via Search
+
+  |------------+-----------------------------------|
+  | Keys       | Description                       |
+  |------------+-----------------------------------|
+  | / + regex  | Search forward in current column  |
+  | ? + regex  | Search backward in current column |
+  | g/ + regex | Search forward in all columns     |
+  | g? + regex | Search backward in all columns    |
+  | n          | Move to next matching row         |
+  | N          | Move to previous matching row     |
+  |------------+-----------------------------------|
+
+* Moving between Sheets and Windows
+
+ |-----------+-------------------------------------------------|
+ | Keys      | Moving between sheets                           |
+ |-----------+-------------------------------------------------|
+ | TAB       | Toggle between current and previous sheet       |
+ | S         | Menu of active sheets                           |
+ | q         | Quit current VisiData sheet or Visidata itself  |
+ | ALT-[1-9] | Jump to sheet [1-9]                             |
+ | ALT-0     | Jump to sheet /s/10                             |
+ |-----------+-------------------------------------------------|
+ | Keys      | Moving between windows                          |
+ |-----------+-------------------------------------------------|
+ | Z         | Split screen, with prior sheet in bottom window |
+ | Ctrl-i    | Move between windows                            |
+ | gZ        | Close the bottom split window                   |
+ |-----------+-------------------------------------------------|
+
+* Basic Row Selection
+
+  |------+------------------------------------------------------|
+  | Keys | Description                                          |
+  |------+------------------------------------------------------|
+  | s    | Select the current row                               |
+  | u    | Unselect the current row                             |
+  | t    | Toggle the current row between selected / unselected |
+  | gs   | Select all rows in current sheet                     |
+  | gu   | Unselect all rows in current sheet                   |
+  | gt   | Toggle all rows between selected / unselected        |
+  |------+------------------------------------------------------|
+
+* Advanced Row Selection
+
+  |----------------+-------------------------------------------------------------------|
+  | Keys           | Description                                                       |
+  |----------------+-------------------------------------------------------------------|
+  | + regex        | Select all rows where regex matches the current column            |
+  | g + regex      | Select all rows where regex matches any column                    |
+  | \ + regex      | Unselect all rows where regex matches the current column          |
+  | g\ + regex     | Unselect all rows where regex matches any column                  |
+  |----------------+-------------------------------------------------------------------|
+  | ,              | Select all rows where the current column matches the current cell |
+  | g,             | Select all rows where any column matches the current cell         |
+  | z + expr       | Select all rows where expr evaluates to True                      |
+  |----------------+-------------------------------------------------------------------|
+  | gs, gt, gu     | Select, Toggle, Unselect all rows                                 |
+  | zs, zt, zu     | Select, Toggle, Unselect all rows between top and the cursor      |
+  | gzs, gzt, gtzu | Select, Toggle, Unselect all rows between bottom and the cursor   |
+  | z\ + expr      | Unselect all rows where expr evaluates to True                    |
+  |----------------+-------------------------------------------------------------------|
+
+* Sorting Rows
+
+  |------+---------------------------------------|
+  | Keys | Description                           |
+  |------+---------------------------------------|
+  | [    | in ascending order of current column  |
+  | ]    | in descending order of current column |
+  | g[   | in ascending order of key columns     |
+  | g]   | in descending order of key columns    |
+  |------+---------------------------------------|
+
+* Filtering Rows and Groups
+
+  |------------+-------------------------------------------------------------|
+  | Keys       | Description                                                 |
+  |------------+-------------------------------------------------------------|
+  | "          | Create new sheet of selected rows                           |
+  | gz"        | Create new sheet with "deep copy" of selected rows          |
+  | R + n      | Create new sheet containing n randomly chosen rows          |
+  |------------+-------------------------------------------------------------|
+  | F + RETURN | Filter to one group: Create freq table, new sheet for group |
+  | Fsq"       | Filter to groups: Create freq table, select groups,         |
+  |            | quit back to prior sheet, new sheet with selected rows      |
+  |------------+-------------------------------------------------------------|
+  | I + RETURN | Filter to described rows: Describe sheet,                   |
+  |            | new sheet with rows described on current line               |
+  |------------+-------------------------------------------------------------|
+
+* Pivot Tables
+
+  |---------------+-------------------------------------------------------------------------------------|
+  | Keys          | Description                                                                         |
+  |---------------+-------------------------------------------------------------------------------------|
+  | !             | Set current column as key column upon which to pivot                                |
+  | +             | Move to another column and then set an aggregation operation there;                 |
+  |               | this configures which column is composed relative to others                         |
+  | ~, #, %, $, @ | Optional: Set the type for the column being aggregated by pressing:                 |
+  |               | ~ (string), # (int), % (float), $ (currency), or @ (date)                           |
+  | W             | Create a pivot table sheet, with key column(s) as rows and current column as values |
+  | RETURN        | Open a sheet of the individual source rows aggregated in the current pivot row      |
+  |---------------+-------------------------------------------------------------------------------------|
+  | M             | Melt aggregated data down to see underlying details, keeping key columns unchanged  |
+  |---------------+-------------------------------------------------------------------------------------|
+  | T             | Create a transposed sheet, where columns become rows and vice versa                 |
+  |---------------+-------------------------------------------------------------------------------------|
+
+* Summarizing Data
+
+  |-----------+---------------------------------------------------------------|
+  | Keys      | Description                                                   |
+  |-----------+---------------------------------------------------------------|
+  | F         | Create frequency table of current column                      |
+  | gF        | Create frequency table of key columns                         |
+  | + + aggr  | Add aggregator, e.g. sum, to column                           |
+  | z+ + aggr | Calculate one-time aggregation of column                      |
+  | I         | Create a "Describe Sheet," with summary stats for each column |
+  |-----------+---------------------------------------------------------------|
+
+
+* Joining Two Sheets
+
+  |----------+---------------------------------------------------------------|
+  | Keys     | Description                                                   |
+  |----------+---------------------------------------------------------------|
+  | S        | Open the list of sheets                                       |
+  | s        | Select each sheet to be concatenated into a new sheet         |
+  | gC       | Show all columns from selected sheets                         |
+  | g        | Press '!' on each key column to join on (for both sheets)     |
+  | S        | Return to Sheets list                                         |
+  | &        | Choose join type from the popup list:                         |
+  |   inner  |   keep rows which match keys on all sheets (intersection)     |
+  |   outer  |   keep rows from first selected sheet (left join)             |
+  |   full   |   keep all rows from all sheets (union)                       |
+  |   diff   |   keep rows NOT in all sheets (difference)                    |
+  |   extend |   keep all rows and retain SheetType from first selected sheet|
+  |----------+---------------------------------------------------------------|
+
+* Appending Multiple Sheets
+
+  |----------+-------------------------------------------------------|
+  | Keys     | Description                                           |
+  |----------+-------------------------------------------------------|
+  | S        | Open the list of sheets                               |
+  | s        | Select each sheet to be concatenated into a new sheet |
+  | & append | Concatenate all selected sheets to a new sheet        |
+  |----------+-------------------------------------------------------|
+
+* Setting Column Types
+
+  |------+-------------|
+  | Keys | Description |
+  |------+-------------|
+  | #    | Integer     |
+  | %    | Float       |
+  | $    | Currency    |
+  | @    | Date        |
+  | ~    | Text        |
+  |------+-------------|
+
+* Editing Cells
+
+  |--------+------------------------------------------------------|
+  | Keys   | Description                                          |
+  |--------+------------------------------------------------------|
+  | e      | Begin editing current cell                           |
+  | Enter  | Finish editing                                       |
+  | Ctrl-c | Cancel editing                                       |
+  | Ctrl-a | Move to beginning of cell                            |
+  | Ctrl-e | Move to end of cell                                  |
+  | Ctrl-k | Clear contents from cursor's position to end of line |
+  |--------+------------------------------------------------------|
+
+* Renaming Columns
+
+  |------+----------------------------------------------------------------------------------|
+  | Keys | Description                                                                      |
+  |------+----------------------------------------------------------------------------------|
+  | ^    | Rename current column                                                            |
+  | g^   | Set names of all unnamed columns to the values in the current or selected row(s) |
+  | gz^  | Set names of all visible columns to the values in the current or selected row(s) |
+  |------+----------------------------------------------------------------------------------|
+
+
+* Resizing Columns
+
+  |--------+--------------------------------------------------------------------|
+  | Keys   | Description                                                        |
+  |--------+--------------------------------------------------------------------|
+  | _      | Adjust the width of current column to fit text in all visible rows |
+  | g_     | Adjust the width of all columns to fit text in all visible rows    |
+  | z_ + n | Set the current column's width to n characters                     |
+  |--------+--------------------------------------------------------------------|
+  | gv     | Unhide all columns                                                 |
+  | z-     | Shrink the current column's width in half                          |
+  |--------+--------------------------------------------------------------------|
+
+* Creating New Rows
+
+ |------+------------------------------------------|
+ | Keys | Description                              |
+ |------+------------------------------------------|
+ | a    | Add a new row                            |
+ | ga   | Prompt for the number of new rows to add |
+ | d    | Delete current row                       |
+ | gd   | Delete selected rows                     |
+ |------+------------------------------------------|
+
+* Creating New Columns
+
+ |-----------+---------------------------------------------------------------------|
+ | Keys      | Description                                                         |
+ |-----------+---------------------------------------------------------------------|
+ | = + expr  | Create a new column from a Python expr evaluated against each row   |
+ | : + regex | Create new column(s) by splitting current column on regex           |
+ | ; + regex | Create new column(s) by extracting regex groups from current column |
+ | '         | Create "frozen" copy of current column, with all cells evaluated    |
+ |-----------+---------------------------------------------------------------------|
+
+* Summarizing Other Sheets
+
+  |------+---------------------------------------------|
+  | Keys | Description                                 |
+  |------+---------------------------------------------|
+  | S    | Sheets sheet                                |
+  | gS   | Sheets graveyard (includes those quit from) |
+  | O    | List of global options                      |
+  | zO   | Options for the current sheet               |
+  | C    | List of columns from the current sheet      |
+  |------+---------------------------------------------|
+

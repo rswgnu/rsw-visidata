@@ -1,0 +1,55 @@
+# ~/Dropbox/GitHub/visidata/dev/commands.tsv summarizes default key bindings
+bindkey = visidata.vd.bindkey
+unbindkey = BaseSheet.unbindkey
+
+[unbindkey(keys) for keys in ('^H', '^X', '^C')]
+visidata.vd.allPrefixes = ['^X', '^H', '^C', 'g', 'z', '^[']
+
+bindkey('f', 'dup-selected') # Create a new sheet with only selected rows
+bindkey('j', 'go-col-regex') # Prompt for a regex matching a column name and move to that column
+bindkey('o', 'splitwin-swap') # Jump to other sheet
+bindkey('^A', 'go-leftmost') # To leftmost colummn
+bindkey('^B', 'go-left')
+bindkey('^D', 'hide-col')
+bindkey('^E', 'go-rightmost') # To rightmost column
+bindkey('^F', 'go-right')
+# bindkey('^H+^H', 'sysopen-help') # doesn't work
+bindkey('^Hl', 'cmdlog-all')
+bindkey('^N', 'go-down')
+bindkey('^P', 'go-up')
+bindkey('^R', 'searchr-col') # Regex search backward in current column
+bindkey('^S', 'search-col') # Regex search forward in current column
+bindkey('^U', 'unhide-cols')
+bindkey('^V', 'go-pagedown')
+bindkey('ALT+^R', 'searchr-cols') # Regex search backward in all columns
+bindkey('ALT+^S', 'search-cols') # Regex search forward in all columns
+bindkey('ALT+v', 'go-pageup')
+bindkey('ALT+<', 'go-top')
+bindkey('ALT+>', 'go-bottom')
+# bindkey('^CKEY_LEFT', 'go-leftmost')
+bindkey('kLFT5', 'go-prev-selected') # C-KEY_LEFT
+bindkey('kRIT5', 'go-next-selected') # C-KEY_RIGHT
+# bindkey('kDWN5', 'go-bottom') # C-KEY_DOWN - doesn't work
+# bindkey('kUP5', 'go-top') # C-KEY_UP - doesn't work
+bindkey('ALT+:', 'pyobj-expr')
+bindkey('ALT+=', 'exec-longname')
+bindkey('gc', 'copy-selected')
+bindkey('gr', 'select-col-regex')
+bindkey('^G', 'replay-stop')
+bindkey('=', 'show-cursor')
+bindkey('^X=', 'sheet-describe-selected')
+bindkey('^X-', 'describe-sheet')
+bindkey('^X+', 'describe-all')
+bindkey('^Xo', 'splitwin-swap') # Jump to other sheet
+bindkey('^X^S', 'save-sheet')
+bindkey('^X^F', 'open-file')
+bindkey('^XKEY_BACKSPACE', 'freq-col') # Frequency of values in columns
+bindkey('^X^S', 'save-sheet')
+
+# Display table of default key bindings
+def show_default_keys():
+    vd.push(openSource('/Users/bk/Dropbox/GitHub/visidata/dev/commands.tsv'))
+
+# `sheet` members and `vd` members are available in the execstr scope
+BaseSheet.addCommand('^H^K', 'show-default-keys', 'show_default_keys()', 'Open a table of vd default keys')
+
