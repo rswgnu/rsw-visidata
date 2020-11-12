@@ -9,7 +9,7 @@
   | Original URL | From which this was adapted:                         |
   |              | https://jsvine.github.io/visidata-cheat-sheet/en/    |
   | Tutorial     | https://jsvine.github.io/intro-to-visidata           |
-  | More info    | visidata.org                                         |
+  | More info    | https://visidata.org                                 |
   |--------------+------------------------------------------------------|
 
 * Getting Help
