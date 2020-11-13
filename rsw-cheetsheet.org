@@ -113,23 +113,23 @@
 
 * Advanced Row Selection
 
-  |----------------+-------------------------------------------------------------------|
-  | Keys           | Description                                                       |
-  |----------------+-------------------------------------------------------------------|
-  | | <regex>      | Select all rows where regex matches the current column            |
-  | g| <regex>     | Select all rows where regex matches any column                    |
-  | \ <regex>      | Unselect all rows where regex matches the current column          |
-  | g\ <regex>     | Unselect all rows where regex matches any column                  |
-  |----------------+-------------------------------------------------------------------|
-  | ,              | Select all rows where the current column matches the current cell |
-  | g,             | Select all rows where any column matches the current cell         |
-  | z <expr>       | Select all rows where expr evaluates to True                      |
-  |----------------+-------------------------------------------------------------------|
-  | gs, gt, gu     | Select, Toggle, Unselect all rows                                 |
-  | zs, zt, zu     | Select, Toggle, Unselect all rows between top and the cursor      |
-  | gzs, gzt, gtzu | Select, Toggle, Unselect all rows between bottom and the cursor   |
-  | z\ + expr      | Unselect all rows where expr evaluates to True                    |
-  |----------------+-------------------------------------------------------------------|
+  |------------------+-------------------------------------------------------------------|
+  | Keys             | Description                                                       |
+  |------------------+-------------------------------------------------------------------|
+  | | <regex>        | Select all rows where regex matches the current column            |
+  | g| <regex>       | Select all rows where regex matches any column                    |
+  | \ <regex>        | Unselect all rows where regex matches the current column          |
+  | g\ <regex>       | Unselect all rows where regex matches any column                  |
+  |------------------+-------------------------------------------------------------------|
+  | ,                | Select all rows where the current column matches the current cell |
+  | g,               | Select all rows where any column matches the current cell         |
+  | z <expr>         | Select all rows where expr evaluates to True                      |
+  |------------------+-------------------------------------------------------------------|
+  | gs, gt, gu       | Select, Toggle, Unselect all rows                                 |
+  | zs, zt, zu       | Select, Toggle, Unselect all rows between top and the cursor      |
+  | gzs, gzt, gtzu   | Select, Toggle, Unselect all rows between bottom and the cursor   |
+  | z\ + expr        | Unselect all rows where expr evaluates to True                    |
+  |------------------+-------------------------------------------------------------------|
 
 * Sorting Rows
 
