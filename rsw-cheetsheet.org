@@ -3,7 +3,7 @@
   |--------------+------------------------------------------------------|
   | Adaptation   | Expanded and adapted for text usage by <rsw@gnu.org> |
   | Version      | VisiData 2.0.1                                       |
-  | Updated      | 2020-11-11                                           |
+  | Updated      | 2020-11-12                                           |
   | License      | Creative Commons Zero v1.0 Universal (cc0-1.0)       |
   |              |                                                      |
   | Original URL | From which this was adapted:                         |
@@ -63,8 +63,8 @@
   | gh gj gk gl                | Move all the way to the left/bottom/top/right of sheet      |
   | < >                        | Move up/down the current column to the next different value |
   | { }                        | Move up/down the current column to the next selected row    |
-  | Ctrl-F                     | One page down (forward)                                     |
-  | Ctrl-B                     | One page up (backward)                                      |
+  | Ctrl-f                     | One page down (forward)                                     |
+  | Ctrl-b                     | One page up (backward)                                      |
   |----------------------------+-------------------------------------------------------------|
 
 * Moving Via Search
@@ -72,10 +72,10 @@
   |------------+-----------------------------------|
   | Keys       | Description                       |
   |------------+-----------------------------------|
-  | / + regex  | Search forward in current column  |
-  | ? + regex  | Search backward in current column |
-  | g/ + regex | Search forward in all columns     |
-  | g? + regex | Search backward in all columns    |
+  | / <regex>  | Search forward in current column  |
+  | ? <regex>  | Search backward in current column |
+  | g/ <regex> | Search forward in all columns     |
+  | g? <regex> | Search backward in all columns    |
   | n          | Move to next matching row         |
   | N          | Move to previous matching row     |
   |------------+-----------------------------------|
@@ -116,14 +116,14 @@
   |----------------+-------------------------------------------------------------------|
   | Keys           | Description                                                       |
   |----------------+-------------------------------------------------------------------|
-  | + regex        | Select all rows where regex matches the current column            |
-  | g + regex      | Select all rows where regex matches any column                    |
-  | \ + regex      | Unselect all rows where regex matches the current column          |
-  | g\ + regex     | Unselect all rows where regex matches any column                  |
+  | | <regex>      | Select all rows where regex matches the current column            |
+  | g| <regex>     | Select all rows where regex matches any column                    |
+  | \ <regex>      | Unselect all rows where regex matches the current column          |
+  | g\ <regex>     | Unselect all rows where regex matches any column                  |
   |----------------+-------------------------------------------------------------------|
   | ,              | Select all rows where the current column matches the current cell |
   | g,             | Select all rows where any column matches the current cell         |
-  | z + expr       | Select all rows where expr evaluates to True                      |
+  | z <expr>       | Select all rows where expr evaluates to True                      |
   |----------------+-------------------------------------------------------------------|
   | gs, gt, gu     | Select, Toggle, Unselect all rows                                 |
   | zs, zt, zu     | Select, Toggle, Unselect all rows between top and the cursor      |
@@ -149,13 +149,13 @@
   |------------+-------------------------------------------------------------|
   | "          | Create new sheet of selected rows                           |
   | gz"        | Create new sheet with "deep copy" of selected rows          |
-  | R + n      | Create new sheet containing n randomly chosen rows          |
+  | R <n>      | Create new sheet containing n randomly chosen rows          |
   |------------+-------------------------------------------------------------|
-  | F + RETURN | Filter to one group: Create freq table, new sheet for group |
+  | F RETURN   | Filter to one group: Create freq table, new sheet for group |
   | Fsq"       | Filter to groups: Create freq table, select groups,         |
   |            | quit back to prior sheet, new sheet with selected rows      |
   |------------+-------------------------------------------------------------|
-  | I + RETURN | Filter to described rows: Describe sheet,                   |
+  | I RETURN   | Filter to described rows: Describe sheet,                   |
   |            | new sheet with rows described on current line               |
   |------------+-------------------------------------------------------------|
 
@@ -184,8 +184,8 @@
   |-----------+---------------------------------------------------------------|
   | F         | Create frequency table of current column                      |
   | gF        | Create frequency table of key columns                         |
-  | + + aggr  | Add aggregator, e.g. sum, to column                           |
-  | z+ + aggr | Calculate one-time aggregation of column                      |
+  | + <aggr>  | Add aggregator, e.g. sum, to column                           |
+  | z+ <aggr> | Calculate one-time aggregation of column                      |
   | I         | Create a "Describe Sheet," with summary stats for each column |
   |-----------+---------------------------------------------------------------|
 
@@ -261,7 +261,7 @@
   |--------+--------------------------------------------------------------------|
   | _      | Adjust the width of current column to fit text in all visible rows |
   | g_     | Adjust the width of all columns to fit text in all visible rows    |
-  | z_ + n | Set the current column's width to n characters                     |
+  | z_ <n> | Set the current column's width to n characters                     |
   |--------+--------------------------------------------------------------------|
   | gv     | Unhide all columns                                                 |
   | z-     | Shrink the current column's width in half                          |
@@ -283,9 +283,9 @@
  |-----------+---------------------------------------------------------------------|
  | Keys      | Description                                                         |
  |-----------+---------------------------------------------------------------------|
- | = + expr  | Create a new column from a Python expr evaluated against each row   |
- | : + regex | Create new column(s) by splitting current column on regex           |
- | ; + regex | Create new column(s) by extracting regex groups from current column |
+ | = <expr>  | Create a new column from a Python expr evaluated against each row   |
+ | : <regex> | Create new column(s) by splitting current column on regex           |
+ | ; <regex> | Create new column(s) by extracting regex groups from current column |
  | '         | Create "frozen" copy of current column, with all cells evaluated    |
  |-----------+---------------------------------------------------------------------|
 
